@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/LightningChess.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/GameScene.gd" type="Script" id=2]
+
+[node name="GameScene" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+lightning_chess = NodePath("HSplitContainer/LightningChess")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+margin_right = 984.0
+margin_bottom = 560.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer"]
+margin_right = 106.0
+margin_bottom = 560.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 99.0
+margin_bottom = 553.0
+alignment = 1
+
+[node name="Resign" type="Button" parent="HSplitContainer/PanelContainer/VBoxContainer"]
+margin_top = 239.0
+margin_right = 92.0
+margin_bottom = 259.0
+text = "Resign"
+
+[node name="OfferDraw" type="Button" parent="HSplitContainer/PanelContainer/VBoxContainer"]
+margin_top = 263.0
+margin_right = 92.0
+margin_bottom = 283.0
+text = "Offer Draw"
+
+[node name="AcceptDraw" type="Button" parent="HSplitContainer/PanelContainer/VBoxContainer"]
+margin_top = 287.0
+margin_right = 92.0
+margin_bottom = 307.0
+text = "Accept Draw"
+
+[node name="LightningChess" parent="HSplitContainer" instance=ExtResource( 1 )]
+margin_right = 506.0
+margin_bottom = 113.0

@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/LightningChess.gd" type="Script" id=1]
+
+[node name="LightningChess" type="PanelContainer"]
+margin_left = 118.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+board_path = NodePath("GridContainer/MarginContainer/GridContainer/Board")
+white_health_path = NodePath("GridContainer/MarginContainer/GridContainer/WhiteHealth")
+black_health_path = NodePath("GridContainer/MarginContainer/GridContainer/BlackHealth")
+piece_name_path = NodePath("GridContainer/CenterContainer/PanelContainer/GridContainer/PieceName")
+damage_path = NodePath("GridContainer/CenterContainer/PanelContainer/GridContainer/Damage")
+owner_path = NodePath("GridContainer/CenterContainer/PanelContainer/GridContainer/Owner")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 859.0
+margin_bottom = 553.0
+columns = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+margin_right = 128.0
+margin_bottom = 99.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 108.0
+margin_bottom = 79.0
+
+[node name="BlackHealth" type="Label" parent="GridContainer/MarginContainer/GridContainer"]
+margin_right = 88.0
+margin_bottom = 14.0
+text = "Black health:"
+align = 1
+
+[node name="Board" type="GridContainer" parent="GridContainer/MarginContainer/GridContainer"]
+margin_top = 18.0
+margin_bottom = 18.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WhiteHealth" type="Label" parent="GridContainer/MarginContainer/GridContainer"]
+margin_top = 22.0
+margin_right = 88.0
+margin_bottom = 36.0
+text = "White Health:"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GridContainer"]
+margin_left = 132.0
+margin_right = 374.0
+margin_bottom = 99.0
+
+[node name="PanelContainer" type="PanelContainer" parent="GridContainer/CenterContainer"]
+margin_right = 242.0
+margin_bottom = 99.0
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer/CenterContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 235.0
+margin_bottom = 92.0
+
+[node name="PieceName" type="Label" parent="GridContainer/CenterContainer/PanelContainer/GridContainer"]
+margin_right = 228.0
+margin_bottom = 14.0
+text = "Piece Name: Rook"
+
+[node name="Damage" type="Label" parent="GridContainer/CenterContainer/PanelContainer/GridContainer"]
+margin_top = 18.0
+margin_right = 228.0
+margin_bottom = 32.0
+text = "Damage: 1"
+
+[node name="Owner" type="Label" parent="GridContainer/CenterContainer/PanelContainer/GridContainer"]
+margin_top = 36.0
+margin_right = 228.0
+margin_bottom = 67.0
+text = "Owner: Black
+"
+
+[node name="Label" type="Label" parent="GridContainer/CenterContainer/PanelContainer/GridContainer"]
+margin_top = 71.0
+margin_right = 228.0
+margin_bottom = 85.0
+text = "                                                         "

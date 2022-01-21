@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/Square.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/Black.png" type="Texture" id=2]
+
+[node name="Square" type="TextureButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+square_path = NodePath("Square")
+piece_path = NodePath("Piece")
+
+[node name="Square" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Piece" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
